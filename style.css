@@ -354,3 +354,82 @@ footer {
   color: var(--primary);
   transform: translateY(-5px);
 }
+/* CONTACT STYLING */
+.contact-info {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.contact-link {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-link:hover {
+    color: #38bdf8; /* Havorang */
+}
+
+/* SOCIAL ICONS (LOGOLAR) */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Logolar orasidagi masofa */
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%; /* Dumaloq qilish */
+    font-size: 1.5rem;
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Har bir logo uchun alohida hover rangi */
+
+/* Telegram rangi */
+.social-icons a.telegram:hover {
+    background: #0088cc;
+    color: white;
+    box-shadow: 0 0 20px #0088cc;
+    transform: translateY(-5px);
+}
+
+/* LinkedIn rangi */
+.social-icons a.linkedin:hover {
+    background: #0077b5;
+    color: white;
+    box-shadow: 0 0 20px #0077b5;
+    transform: translateY(-5px);
+}
+
+/* Instagram rangi (Gradient) */
+.social-icons a.instagram:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: white;
+    box-shadow: 0 0 20px #e6683c;
+    transform: translateY(-5px);
+}
+
+/* GitHub rangi */
+.social-icons a.github:hover {
+    background: #333;
+    color: white;
+    box-shadow: 0 0 20px #333;
+    transform: translateY(-5px);
+}
