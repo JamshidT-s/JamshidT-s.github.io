@@ -315,3 +315,42 @@ footer {
     grid-template-columns: 1fr; /* Telefonda bitta ustun */
   }
 }
+.contact-item {
+  text-decoration: none;
+}
+/* CONTACT YANGILANISHI */
+.contact-item {
+  display: block;
+  margin: 15px 0;
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.contact-item i {
+  color: var(--primary);
+  margin-right: 10px;
+}
+
+.contact-item:hover {
+  color: var(--primary);
+}
+
+.social-icons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-icons a {
+  font-size: 2rem;
+  color: var(--text-dim);
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--primary);
+  transform: translateY(-5px);
+}
