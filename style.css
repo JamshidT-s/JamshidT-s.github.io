@@ -1,4 +1,4 @@
-/* ===== GLOBAL SOZLAMALAR ===== */
+/* GLOBAL SOZLAMALAR */
 :root {
   --bg-color: #0f172a;
   --card-bg: rgba(30, 41, 59, 0.7);
@@ -25,7 +25,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== NAVBAR (SHISHA EFFEKTI) ===== */
+/* NAVBAR (SHISHA EFFEKTI) */
 .navbar {
   position: fixed;
   top: 0;
@@ -91,7 +91,7 @@ body {
   width: 100%;
 }
 
-/* ===== UMUMIY BO'LIMLAR ===== */
+/* UMUMIY BO'LIMLAR */
 section {
   padding: 100px 5%;
   max-width: 1200px;
@@ -130,7 +130,7 @@ section {
   gap: 30px;
 }
 
-/* ===== HERO SECTION ===== */
+/* HERO SECTION */
 .hero {
   height: 100vh;
   display: flex;
@@ -174,7 +174,7 @@ section {
   transform: scale(1.05);
 }
 
-/* ===== SKILLS ===== */
+/*  SKILLS */
 .skills-wrapper {
   max-width: 800px;
   margin: 0 auto;
@@ -217,7 +217,7 @@ section {
   to { width: var(--w); }
 }
 
-/* ===== PROJECTS ===== */
+/* PROJECTS */
 .project-card h3 {
   color: var(--primary);
   margin-bottom: 10px;
@@ -248,7 +248,7 @@ section {
   color: #0f172a;
 }
 
-/* ===== CONTACT & FOOTER ===== */
+/* CONTACT & FOOTER */
 .contact-card {
   text-align: center;
   max-width: 600px;
@@ -272,7 +272,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ===== ANIMATSIYALAR ===== */
+/* ANIMATSIYALAR */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -289,7 +289,7 @@ footer {
   }
 }
 
-/* ===== RESPONSIVE (TELEFONLAR UCHUN) ===== */
+/* RESPONSIVE (TELEFONLAR UCHUN) */
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
@@ -433,3 +433,4 @@ footer {
     box-shadow: 0 0 20px #333;
     transform: translateY(-5px);
 }
+
