@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table | Jamshid</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* FONT VA UMUMIY SOZLAMALAR (GLOBAL STYLES */
+        
+        /* Google Fonts dan 'Poppins' shriftini import qilish */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        /* Barcha elementlar uchun "Reset" (Tozalash) */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; /* O'lchamlarni to'g'ri hisoblash uchun */
+            font-family: 'Poppins', sans-serif; 
+        }
+
+        /* Tana qismi (Body) sozlamalari */
+        body { 
+            background: #0f172a; /* To'q ko'k fon */
+            color: #fff; /* Oq rangli matn */
+            min-height: 100vh; /* Ekran balandligi bo'yicha to'liq joylashish */
+            display: flex; /* Elementlarni markazga joylash uchun Flexbox */
+            justify-content: center; /* Gorizontal markazlash */
+            align-items: center; /* Vertikal markazlash */
+            padding: 20px; 
+        }
+
+        /* CONTAINER VA LAYOUT */
+        
+        /* Asosiy konteyner */
+        .pricing-container { 
+            max-width: 1100px; 
+            width: 100%; 
+            text-align: center; 
+        }
+
+        /* Sarlavha dizayni (Gradient effekt bilan) */
+        .header h2 { 
+            font-size: 2.5rem; 
+            /* Matn ichiga rangli gradient berish */
+            background: linear-gradient(to right, #38bdf8, #818cf8); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            margin-bottom: 10px; 
+        }
+
+        .header p { 
+            color: #94a3b8; /* Och kulrang yozuv */
+            margin-bottom: 50px; 
+        }
+
+        /* Kartalar o'rami (Wrapper) */
+        .cards-wrapper { 
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; /* Kartalar orasidagi masofa */
+            flex-wrap: wrap; /* Sig'may qolsa pastga tushirish (Responsive) */
+            align-items: center; /* Markazlashtirish */
+        }
+
+        /* KARTA DIZAYNI (CARD STYLES) */
+        
+        /* Oddiy karta uslubi */
+        .card { 
+            background: rgba(30, 41, 59, 0.6); /* Yarim shaffof fon */
+            backdrop-filter: blur(10px); /* Orqa fonni xiralashtirish (Glassmorphism) */
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Ingichka chegara */
+            padding: 40px 30px; 
+            border-radius: 20px; 
+            width: 320px; 
+            transition: 0.3s; /* Silliq o'zgarish */
+            position: relative; 
+        }
+
+        /* Karta ustiga sichqoncha borganda (Hover) */
+        .card:hover { 
+            transform: translateY(-15px); /* Yuqoriga ko'tarilish */
+            border-color: #38bdf8; /* Chegara rangi o'zgarishi */
+        }
+
+        /* POPULAR (O'RTADAGI) KARTA */
+        
+        /* "Professional" kartasi uchun maxsus stil */
+        .card.popular { 
+            /* To'qroq va jozibali gradient fon */
+            background: linear-gradient(145deg, rgba(30,41,59,0.9), rgba(15,23,42,0.9)); 
+            border: 1px solid #38bdf8; 
+            transform: scale(1.05); /* Boshqalardan kattaroq turishi uchun */
+            z-index: 1; /* Oldingi planda turishi uchun */
+        }
+
+        /* Popular karta hover effekti */
+        .card.popular:hover { 
+            transform: scale(1.05) translateY(-15px); 
+        }
+
+        /* "Tavsiya" yozuvi (Badge) */
+        .badge { 
+            position: absolute; 
+            top: -15px; 
+            left: 50%; 
+            transform: translateX(-50%); /* O'rtaga joylash */
+            background: #38bdf8; 
+            color: #020617; 
+            padding: 5px 15px; 
+            border-radius: 20px; 
+            font-size: 0.8rem; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+        }
+
+        /* ICHKI ELEMENTLAR (Price, Features, Button) */
+        
+        /* Narx dizayni */
+        .price { 
+            font-size: 3rem; 
+            font-weight: 700; 
+            color: #38bdf8; 
+            margin: 20px 0; 
+        }
+
+        .price span { 
+            font-size: 1rem; 
+            color: #94a3b8; 
+            font-weight: 400; 
+        }
+
+        /* Xususiyatlar ro'yxati (ul) */
+        .features { 
+            list-style: none; /* Nuqtalarni olib tashlash */
+            text-align: left; 
+            margin-bottom: 30px; 
+        }
+
+        .features li { 
+            margin-bottom: 15px; 
+            color: #cbd5e1; 
+            display: flex; 
+            gap: 10px; /* Ikonka va matn orasidagi masofa */
+        }
+
+        .features li i { 
+            color: #38bdf8; /* Ikonka rangi (Check belgisi) */
+        }
+
+        /* Tugma dizayni */
+        .btn { 
+            width: 100%; 
+            padding: 15px; 
+            background: transparent; 
+            border: 2px solid #38bdf8; 
+            color: #38bdf8; 
+            font-weight: bold; 
+            cursor: pointer; 
+            border-radius: 10px; 
+            transition: 0.3s; 
+        }
+
+        /* Tugma hover effekti va Popular kartadagi tugma */
+        .card.popular .btn, .btn:hover { 
+            background: #38bdf8; 
+            color: #020617; 
+        }
+
+        /* Asosiy sahifaga qaytish havolasi */
+        .back-link { 
+            position: absolute; 
+            top: 20px; 
+            left: 20px; 
+            color: #38bdf8; 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Asosiy Sahifa</a>
+
+    <div class="pricing-container">
+        
+        <div class="header">
+            <h2>Bizning Tariflar</h2>
+            <p>O'zingizga mos rejani tanlang</p>
+        </div>
+
+        <div class="cards-wrapper">
+            
+            <div class="card">
+                <h3>Boshlang'ich</h3>
+                <div class="price">$19<span>/oyiga</span></div>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> 1 ta Vebsayt</li>
+                    <li><i class="fas fa-check"></i> 5 GB Xotira</li>
+                    <li><i class="fas fa-check"></i> Email Yordam</li>
+                </ul>
+                <button class="btn">Boshlash</button>
+            </div>
+
+            <div class="card popular">
+                <span class="badge">Tavsiya</span> <h3>Professional</h3>
+                <div class="price">$49<span>/oyiga</span></div>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> 5 ta Vebsayt</li>
+                    <li><i class="fas fa-check"></i> 50 GB Xotira</li>
+                    <li><i class="fas fa-check"></i> 24/7 Yordam</li>
+                </ul>
+                <button class="btn">Tanlash</button>
+            </div>
+
+             <div class="card">
+                <h3>Biznes</h3>
+                <div class="price">$99<span>/oyiga</span></div>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Cheksiz Vebsaytlar</li>
+                    <li><i class="fas fa-check"></i> 500 GB Xotira</li>
+                    <li><i class="fas fa-check"></i> VIP Yordam</li>
+                </ul>
+                <button class="btn">Bog'lanish</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
