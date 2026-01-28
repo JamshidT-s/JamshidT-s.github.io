@@ -2,127 +2,148 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Jamshid | Frontend Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jamshid | Frontend Developer</title>
+  <link rel="icon" type="image/png" href="Logo.png">
   <link rel="stylesheet" href="style.css">
-   <link rel="icon" type="image/png" href="Logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <nav class="navbar">
-    <h2 class="logo">
-        Turgunpulatov Jamshid<span>.</span>
-    </h2>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="container nav-container">
+      <h2 class="logo">Turgunpolatov Jamshid<span>.</span></h2>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero" id="home">
-    <h1>IT Specialist & <span>Frontend Developer</span></h1>
-    <p>I build modern, responsive and clean websites</p>
-    <a href="#projects" class="btn">View Projects</a>
+    <div class="hero-content">
+      <h1 class="fade-in">IT Specialist & <br> <span>Frontend Developer</span></h1>
+      <p class="fade-in delay-1">I build modern, responsive, and clean websites.</p>
+      <a href="#projects" class="btn fade-in delay-2">View My Work</a>
+    </div>
   </section>
 
-  <!-- ABOUT -->
   <section class="about" id="about">
-    <h2>About Me</h2>
-    <p>
-      I am Turgunpulatov Jamshid an IT specialist and frontend developer who enjoys creating
-      clean and responsive web interfaces.  
-      I love learning new technologies and building useful things.
-      <br><br>
-      I am also interested in mechanics, fixing and understanding
-      how systems work.
-    </p>
+    <h2 class="section-title">About Me</h2>
+    <div class="card about-card">
+      <p>
+        I am an IT specialist and frontend developer who enjoys creating
+        clean and responsive web interfaces. I love learning new technologies 
+        and building useful things.
+        <br><br>
+        I am also interested in mechanics, fixing and understanding
+        how systems work.
+      </p>
+    </div>
   </section>
   
-  <!-- EDUCATION -->
-<section class="education" id="education">
-  <h2>Education</h2>
+  <section class="education" id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="grid-container">
+      <div class="card edu-item">
+        <h3>Amity University of Tashkent</h3>
+        <p class="highlight">IFS Program (2024 – 2025)</p>
+        <p>Focus on foundational IT skills.</p>
+      </div>
+      <div class="card edu-item">
+        <h3>Namangan Institute</h3>
+        <p class="highlight">Information Systems</p>
+        <p>Currently studying (Bachelor's Degree).</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="edu-item">
-    <h3>Amity University of Tashkent</h3>
-    <p>IFS Program (2024 – 2025)</p>
-  </div>
-
-  <div class="edu-item">
-    <h3>Namangan</h3>
-    <p>Information Systems and Technologies (Currently studying)</p>
-  </div>
-</section>
-
-
-  <!-- SKILLS -->
   <section class="skills" id="skills">
-    <h2>Skills</h2>
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-wrapper">
+      
+      <div class="skill">
+        <div class="skill-info">
+          <span>HTML5</span>
+          <span>90%</span>
+        </div>
+        <div class="bar"><div class="fill html"></div></div>
+      </div>
 
-    <div class="skill">
-      <span>HTML</span>
-      <div class="bar"><div class="fill html"></div></div>
-    </div>
+      <div class="skill">
+        <div class="skill-info">
+          <span>CSS3 & Flexbox</span>
+          <span>85%</span>
+        </div>
+        <div class="bar"><div class="fill css"></div></div>
+      </div>
 
-    <div class="skill">
-      <span>CSS</span>
-      <div class="bar"><div class="fill css"></div></div>
-    </div>
-    
-    <div class="skill">
-      <span>Responsive Design</span>
-      <div class="bar"><div class="fill responsive"></div></div>
-    </div>
+      <div class="skill">
+        <div class="skill-info">
+          <span>Responsive Design</span>
+          <span>80%</span>
+        </div>
+        <div class="bar"><div class="fill responsive"></div></div>
+      </div>
 
-    <div class="skill">
-      <span>Git & GitHub</span>
-      <div class="bar"><div class="fill git"></div></div>
+      <div class="skill">
+        <div class="skill-info">
+          <span>Git & GitHub</span>
+          <span>75%</span>
+        </div>
+        <div class="bar"><div class="fill git"></div></div>
+      </div>
+
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section class="projects" id="projects">
-    <h2>Projects</h2>
-
-   <div class="project-card">
-  <div class="project-overlay">
-    <a href="https://jamshidt-s.github.io" target="_blank">View on GitHub</a>
-  </div>
+    <h2 class="section-title">My Projects</h2>
+    <div class="grid-container">
+      
+      <div class="card project-card">
         <h3>Portfolio Website</h3>
-        <p>Personal portfolio built with HTML & CSS.</p>
-    </div>
+        <p>My personal portfolio built with pure HTML & CSS with modern animations.</p>
+        <div class="links">
+          <a href="https://jamshidt-s.github.io" target="_blank">View Live</a>
+          <a href="#" class="github-btn">Code</a>
+        </div>
+      </div>
 
-
-      <div class="project-card">
+      <div class="card project-card">
         <h3>Landing Page</h3>
-        <p>Modern responsive landing page.</p>
-        <a href="#">GitHub</a>
+        <p>A modern responsive landing page structure with hover effects.</p>
+        <div class="links">
+          <a href="#">View Live</a>
+          <a href="#" class="github-btn">Code</a>
+        </div>
       </div>
 
-      <div class="project-card">
+      <div class="card project-card">
         <h3>JavaScript App</h3>
-        <p>Simple interactive JavaScript project.</p>
-        <a href="#">GitHub</a>
+        <p>Interactive elements and DOM manipulation practice.</p>
+        <div class="links">
+          <a href="#">View Live</a>
+          <a href="#" class="github-btn">Code</a>
+        </div>
       </div>
+
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section class="contact" id="contact">
-    <h2>Contact</h2>
-    <p>+998 93 903 27 03<p>
-    <p>Email: turgunpolatovjamshid45@gmail.com</p>
-    <p>GitHub: 
-        <a href="https://github.com/JamshidT-s" 
-        target="_blank" 
-        rel="noopener" class="github-link">
-        github.com/JamshidT-s
-    </a>
-</p>
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="card contact-card">
+      <p>Interested in working together? Let's talk!</p>
+      <a href="mailto:turgunpolatovjamshid45@gmail.com" class="btn">Email Me</a>
+      <div class="socials">
+        <p>GitHub: <a href="https://github.com/JamshidT-s" target="_blank">JamshidT-s</a></p>
+      </div>
+    </div>
   </section>
 
   <footer>
@@ -131,7 +152,3 @@
 
 </body>
 </html>
-
-
-
-
