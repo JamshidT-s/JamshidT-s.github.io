@@ -178,6 +178,28 @@
             text-decoration: none; 
             font-weight: bold; 
         }
+        /* TELEFON UCHUN MOSLASH (RESPONSIVE) */
+        @media screen and (max-width: 768px) {
+            .header h2 {
+                font-size: 2rem;
+            }
+            .card {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+            .card.popular {
+                transform: scale(1);
+            }
+            
+            .card.popular:hover {
+                transform: scale(1);
+            }
+            .back-link {
+                top: 10px;
+                left: 10px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -229,4 +251,5 @@
         </div>
     </div>
 </body>
+
 </html>
