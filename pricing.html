@@ -8,107 +8,79 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <style>
-        /* FONT VA UMUMIY SOZLAMALAR (GLOBAL STYLES */
-        
-        /* Google Fonts dan 'Poppins' shriftini import qilish */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
-        /* Barcha elementlar uchun "Reset" (Tozalash) */
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; /* O'lchamlarni to'g'ri hisoblash uchun */
-            font-family: 'Poppins', sans-serif; 
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
-        /* Tana qismi (Body) sozlamalari */
+        /* Orqa fon */
         body { 
-            background: #0f172a; /* To'q ko'k fon */
-            color: #fff; /* Oq rangli matn */
-            min-height: 100vh; /* Ekran balandligi bo'yicha to'liq joylashish */
-            display: flex; /* Elementlarni markazga joylash uchun Flexbox */
-            justify-content: center; /* Gorizontal markazlash */
-            align-items: center; /* Vertikal markazlash */
-            padding: 20px; 
+            background: radial-gradient(circle at top, #1e293b 0%, #020617 100%);
+            background-attachment: fixed;
+            color: #fff; 
+            min-height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 20px;
         }
 
-        /* CONTAINER VA LAYOUT */
-        
-        /* Asosiy konteyner */
         .pricing-container { 
             max-width: 1100px; 
             width: 100%; 
-            text-align: center; 
-        }
+            text-align: center; }
 
-        /* Sarlavha dizayni (Gradient effekt bilan) */
+        /* Sarlavha gradienti */
         .header h2 { 
             font-size: 2.5rem; 
-            /* Matn ichiga rangli gradient berish */
-            background: linear-gradient(to right, #38bdf8, #818cf8); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
+            background: linear-gradient(to right, #14b8a6, #a855f7); /* GRADIENT */
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
             margin-bottom: 10px; 
         }
-
         .header p { 
-            color: #94a3b8; /* Och kulrang yozuv */
+            color: #94a3b8; 
             margin-bottom: 50px; 
         }
 
-        /* Kartalar o'rami (Wrapper) */
         .cards-wrapper { 
             display: flex; 
             justify-content: center; 
-            gap: 30px; /* Kartalar orasidagi masofa */
-            flex-wrap: wrap; /* Sig'may qolsa pastga tushirish (Responsive) */
-            align-items: center; /* Markazlashtirish */
+            gap: 30px; flex-wrap: wrap; 
+            align-items: center; 
         }
 
-        /* KARTA DIZAYNI (CARD STYLES) */
-        
-        /* Oddiy karta uslubi */
         .card { 
-            background: rgba(30, 41, 59, 0.6); /* Yarim shaffof fon */
-            backdrop-filter: blur(10px); /* Orqa fonni xiralashtirish (Glassmorphism) */
-            border: 1px solid rgba(255, 255, 255, 0.1); /* Ingichka chegara */
+            background: rgba(15, 23, 42, 0.6); /* Fon */
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
             padding: 40px 30px; 
             border-radius: 20px; 
             width: 320px; 
-            transition: 0.3s; /* Silliq o'zgarish */
+            transition: 0.3s; 
             position: relative; 
         }
+        /* Hover rangi  */
+        .card:hover { transform: translateY(-15px); border-color: #14b8a6; box-shadow: 0 15px 30px rgba(20, 184, 166, 0.2); }
 
-        /* Karta ustiga sichqoncha borganda (Hover) */
-        .card:hover { 
-            transform: translateY(-15px); /* Yuqoriga ko'tarilish */
-            border-color: #38bdf8; /* Chegara rangi o'zgarishi */
-        }
-
-        /* POPULAR (O'RTADAGI) KARTA */
-        
-        /* "Professional" kartasi uchun maxsus stil */
+        /* Popular karta gradienti va ranglari */
         .card.popular { 
-            /* To'qroq va jozibali gradient fon */
-            background: linear-gradient(145deg, rgba(30,41,59,0.9), rgba(15,23,42,0.9)); 
-            border: 1px solid #38bdf8; 
-            transform: scale(1.05); /* Boshqalardan kattaroq turishi uchun */
-            z-index: 1; /* Oldingi planda turishi uchun */
+            background: linear-gradient(145deg, rgba(20, 184, 166, 0.1), rgba(168, 85, 247, 0.1)); 
+            border: 2px solid #14b8a6; 
+            transform: scale(1.05); 
+            z-index: 1; 
         }
-
-        /* Popular karta hover effekti */
         .card.popular:hover { 
             transform: scale(1.05) translateY(-15px); 
+            box-shadow: 0 20px 40px rgba(20, 184, 166, 0.3); 
         }
 
-        /* "Tavsiya" yozuvi (Badge) */
+        /* Badge rangi */
         .badge { 
             position: absolute; 
             top: -15px; 
             left: 50%; 
-            transform: translateX(-50%); /* O'rtaga joylash */
-            background: #38bdf8; 
-            color: #020617; 
+            transform: translateX(-50%); 
+            background: linear-gradient(to right, #14b8a6, #a855f7); 
+            color: #fff; 
             padding: 5px 15px; 
             border-radius: 20px; 
             font-size: 0.8rem; 
@@ -116,89 +88,75 @@
             text-transform: uppercase; 
         }
 
-        /* ICHKI ELEMENTLAR (Price, Features, Button) */
-        
-        /* Narx dizayni */
+        /* Narx rangi */
         .price { 
             font-size: 3rem; 
             font-weight: 700; 
-            color: #38bdf8; 
+            color: #14b8a6; 
             margin: 20px 0; 
+            text-shadow: 0 0 10px rgba(20, 184, 166, 0.3); 
         }
-
         .price span { 
             font-size: 1rem; 
             color: #94a3b8; 
             font-weight: 400; 
+            text-shadow: none; 
         }
 
-        /* Xususiyatlar ro'yxati (ul) */
         .features { 
-            list-style: none; /* Nuqtalarni olib tashlash */
+            list-style: none; 
             text-align: left; 
             margin-bottom: 30px; 
         }
-
         .features li { 
             margin-bottom: 15px; 
             color: #cbd5e1; 
-            display: flex; 
-            gap: 10px; /* Ikonka va matn orasidagi masofa */
+            display: flex; gap: 10px; 
         }
-
+        /* Ikonka rangi  */
         .features li i { 
-            color: #38bdf8; /* Ikonka rangi (Check belgisi) */
+            color: #14b8a6; 
         }
 
-        /* Tugma dizayni */
+        /* Tugma rangi */
         .btn { 
             width: 100%; 
             padding: 15px; 
             background: transparent; 
-            border: 2px solid #38bdf8; 
-            color: #38bdf8; 
+            border: 2px solid #14b8a6; 
+            color: #14b8a6; 
             font-weight: bold; 
             cursor: pointer; 
             border-radius: 10px; 
             transition: 0.3s; 
         }
-
-        /* Tugma hover effekti va Popular kartadagi tugma */
         .card.popular .btn, .btn:hover { 
-            background: #38bdf8; 
-            color: #020617; 
+            background: linear-gradient(to right, #14b8a6, #a855f7); 
+            border-color: transparent; 
+            color: #fff; 
+            box-shadow: 0 5px 15px rgba(20, 184, 166, 0.4); 
         }
 
-        /* Asosiy sahifaga qaytish havolasi */
+        /* Orqaga qaytish linki */
         .back-link { 
             position: absolute; 
             top: 20px; 
             left: 20px; 
-            color: #38bdf8; 
+            color: #14b8a6; 
             text-decoration: none; 
             font-weight: bold; 
         }
-        /* TELEFON UCHUN MOSLASH (RESPONSIVE) */
+        .back-link:hover { 
+            text-decoration: underline; 
+        }
+
+        /* RESPONSIVE */
         @media screen and (max-width: 768px) {
-            .header h2 {
-                font-size: 2rem;
-            }
-            .card {
-                width: 90%;
-                margin-bottom: 20px;
-            }
-            .card.popular {
-                transform: scale(1);
-            }
-            
-            .card.popular:hover {
-                transform: scale(1);
-            }
-            .back-link {
-                top: 10px;
-                left: 10px;
-                font-size: 0.9rem;
-            }
+            .header h2 { font-size: 2rem; }
+            .card { width: 90%; margin-bottom: 20px; }
+            .card.popular { transform: scale(1); }
+            .card.popular:hover { transform: scale(1); }
+            .back-link { top: 10px; left: 10px; font-size: 0.9rem; }
         }
     </style>
 </head>
