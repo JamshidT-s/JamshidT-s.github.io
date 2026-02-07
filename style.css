@@ -1,9 +1,12 @@
 /* GLOBAL SOZLAMALAR */
+
 :root {
   --bg-color: #0f172a;
   --card-bg: rgba(30, 41, 59, 0.7);
-  --primary: #38bdf8;       /* Yorqin havorang */
-  --secondary: #818cf8;     /* Binafsha tus */
+  
+  /* YANGI RANGLAR: */
+  --primary: #14b8a6;       
+  --secondary: #a855f7;     
   --text-light: #e2e8f0;
   --text-dim: #94a3b8;
   --font-main: 'Poppins', sans-serif;
@@ -14,25 +17,27 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--font-main);
-  scroll-behavior: smooth; /* Silliq scroll */
+  scroll-behavior: smooth; 
 }
 
 body {
-  background-color: var(--bg-color);
-  background-image: radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%);
-  color: var(--text-light);
-  line-height: 1.6;
-  overflow-x: hidden;
+    background: linear-gradient(135deg, #020617 0%, #0f172a 40%, #1e1b4b 100%);
+    background-attachment: fixed; 
+    background-size: cover;
+  
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* NAVBAR (SHISHA EFFEKTI) */
+
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   padding: 15px 0;
-  background: rgba(15, 23, 42, 0.8); /* Shaffof qora */
-  backdrop-filter: blur(10px);       /* Orqa fon xiralashishi */
+  background: rgba(15, 23, 42, 0.8); 
+  backdrop-filter: blur(10px);       
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1000;
 }
@@ -203,7 +208,7 @@ section {
   height: 100%;
   background: linear-gradient(90deg, var(--primary), var(--secondary));
   border-radius: 10px;
-  width: 0; /* Boshlang'ich holat */
+  width: 0;
   animation: fillBar 1.5s ease-out forwards;
 }
 
@@ -312,7 +317,7 @@ footer {
   }
 
   .grid-container {
-    grid-template-columns: 1fr; /* Telefonda bitta ustun */
+    grid-template-columns: 1fr;
   }
 }
 .contact-item {
@@ -374,14 +379,14 @@ footer {
 }
 
 .contact-link:hover {
-    color: #38bdf8; /* Havorang */
+    color: #38bdf8; 
 }
 
 /* SOCIAL ICONS (LOGOLAR) */
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 25px; /* Logolar orasidagi masofa */
+    gap: 25px;
     margin-top: 20px;
 }
 
@@ -392,7 +397,7 @@ footer {
     width: 50px;
     height: 50px;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 50%; /* Dumaloq qilish */
+    border-radius: 50%;
     font-size: 1.5rem;
     color: #e2e8f0;
     text-decoration: none;
@@ -400,7 +405,7 @@ footer {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Har bir logo uchun alohida hover rangi */
+
 
 /* Telegram rangi */
 .social-icons a.telegram:hover {
@@ -433,4 +438,3 @@ footer {
     box-shadow: 0 0 20px #333;
     transform: translateY(-5px);
 }
-
