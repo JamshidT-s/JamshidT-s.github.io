@@ -4,7 +4,7 @@
   --bg-color: #0f172a;
   --card-bg: rgba(30, 41, 59, 0.7);
   
-  /* YANGI RANGLAR: */
+ 
   --primary: #14b8a6;       
   --secondary: #a855f7;     
   --text-light: #e2e8f0;
@@ -438,3 +438,4 @@ footer {
     box-shadow: 0 0 20px #333;
     transform: translateY(-5px);
 }
+
