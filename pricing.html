@@ -4,159 +4,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing Table | Jamshid</title>
-    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-        /* Orqa fon */
-        body { 
+        body {
             background: radial-gradient(circle at top, #1e293b 0%, #020617 100%);
             background-attachment: fixed;
-            color: #fff; 
-            min-height: 100vh; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
         }
 
-        .pricing-container { 
-            max-width: 1100px; 
-            width: 100%; 
-            text-align: center; }
-
-        /* Sarlavha gradienti */
-        .header h2 { 
-            font-size: 2.5rem; 
-            background: linear-gradient(to right, #14b8a6, #a855f7); /* GRADIENT */
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
-            margin-bottom: 10px; 
-        }
-        .header p { 
-            color: #94a3b8; 
-            margin-bottom: 50px; 
+        .pricing-container {
+            max-width: 1100px;
+            width: 100%;
+            text-align: center;
         }
 
-        .cards-wrapper { 
-            display: flex; 
-            justify-content: center; 
-            gap: 30px; flex-wrap: wrap; 
-            align-items: center; 
+        .header h2 {
+            font-size: 2.5rem;
+            background: linear-gradient(to right, #14b8a6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
         }
 
-        .card { 
-            background: rgba(15, 23, 42, 0.6); /* Fon */
-            backdrop-filter: blur(12px); 
-            border: 1px solid rgba(255, 255, 255, 0.08); 
-            padding: 40px 30px; 
-            border-radius: 20px; 
-            width: 320px; 
-            transition: 0.3s; 
-            position: relative; 
-        }
-        /* Hover rangi  */
-        .card:hover { transform: translateY(-15px); border-color: #14b8a6; box-shadow: 0 15px 30px rgba(20, 184, 166, 0.2); }
-
-        /* Popular karta gradienti va ranglari */
-        .card.popular { 
-            background: linear-gradient(145deg, rgba(20, 184, 166, 0.1), rgba(168, 85, 247, 0.1)); 
-            border: 2px solid #14b8a6; 
-            transform: scale(1.05); 
-            z-index: 1; 
-        }
-        .card.popular:hover { 
-            transform: scale(1.05) translateY(-15px); 
-            box-shadow: 0 20px 40px rgba(20, 184, 166, 0.3); 
+        .header p {
+            color: #94a3b8;
+            margin-bottom: 50px;
         }
 
-        /* Badge rangi */
-        .badge { 
-            position: absolute; 
-            top: -15px; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            background: linear-gradient(to right, #14b8a6, #a855f7); 
-            color: #fff; 
-            padding: 5px 15px; 
-            border-radius: 20px; 
-            font-size: 0.8rem; 
-            font-weight: bold; 
-            text-transform: uppercase; 
+        .cards-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            align-items: center;
         }
 
-        /* Narx rangi */
-        .price { 
-            font-size: 3rem; 
-            font-weight: 700; 
-            color: #14b8a6; 
-            margin: 20px 0; 
-            text-shadow: 0 0 10px rgba(20, 184, 166, 0.3); 
-        }
-        .price span { 
-            font-size: 1rem; 
-            color: #94a3b8; 
-            font-weight: 400; 
-            text-shadow: none; 
+        .card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px 30px;
+            border-radius: 20px;
+            width: 320px;
+            transition: 0.3s;
+            position: relative;
         }
 
-        .features { 
-            list-style: none; 
-            text-align: left; 
-            margin-bottom: 30px; 
-        }
-        .features li { 
-            margin-bottom: 15px; 
-            color: #cbd5e1; 
-            display: flex; gap: 10px; 
-        }
-        /* Ikonka rangi  */
-        .features li i { 
-            color: #14b8a6; 
+        .card:hover {
+            transform: translateY(-15px);
+            border-color: #14b8a6;
+            box-shadow: 0 15px 30px rgba(20, 184, 166, 0.2);
         }
 
-        /* Tugma rangi */
-        .btn { 
-            width: 100%; 
-            padding: 15px; 
-            background: transparent; 
-            border: 2px solid #14b8a6; 
-            color: #14b8a6; 
-            font-weight: bold; 
-            cursor: pointer; 
-            border-radius: 10px; 
-            transition: 0.3s; 
-        }
-        .card.popular .btn, .btn:hover { 
-            background: linear-gradient(to right, #14b8a6, #a855f7); 
-            border-color: transparent; 
-            color: #fff; 
-            box-shadow: 0 5px 15px rgba(20, 184, 166, 0.4); 
+        .card.popular {
+            background: linear-gradient(145deg, rgba(20, 184, 166, 0.1), rgba(168, 85, 247, 0.1));
+            border: 2px solid #14b8a6;
+            transform: scale(1.05);
+            z-index: 1;
         }
 
-        /* Orqaga qaytish linki */
-        .back-link { 
-            position: absolute; 
-            top: 20px; 
-            left: 20px; 
-            color: #14b8a6; 
-            text-decoration: none; 
-            font-weight: bold; 
-        }
-        .back-link:hover { 
-            text-decoration: underline; 
+        .card.popular:hover {
+            transform: scale(1.05) translateY(-15px);
+            box-shadow: 0 20px 40px rgba(20, 184, 166, 0.3);
         }
 
-        /* RESPONSIVE */
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to right, #14b8a6, #a855f7);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #14b8a6;
+            margin: 20px 0;
+            text-shadow: 0 0 10px rgba(20, 184, 166, 0.3);
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: #94a3b8;
+            font-weight: 400;
+        }
+
+        .features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .features li {
+            margin-bottom: 15px;
+            color: #cbd5e1;
+            display: flex;
+            gap: 10px;
+        }
+
+        .features li i {
+            color: #14b8a6;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: transparent;
+            border: 2px solid #14b8a6;
+            color: #14b8a6;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .card.popular .btn, 
+        .btn:hover {
+            background: linear-gradient(to right, #14b8a6, #a855f7);
+            border-color: transparent;
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(20, 184, 166, 0.4);
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #14b8a6;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+            color: #fff;
+        }
+
         @media screen and (max-width: 768px) {
-            .header h2 { font-size: 2rem; }
-            .card { width: 90%; margin-bottom: 20px; }
-            .card.popular { transform: scale(1); }
-            .card.popular:hover { transform: scale(1); }
-            .back-link { top: 10px; left: 10px; font-size: 0.9rem; }
+            .header h2 {
+                font-size: 2rem;
+            }
+            .card {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+            .card.popular {
+                transform: scale(1);
+            }
+            .card.popular:hover {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
@@ -165,14 +184,12 @@
     <a href="index.html" class="back-link">← Asosiy Sahifa</a>
 
     <div class="pricing-container">
-        
         <div class="header">
             <h2>Bizning Tariflar</h2>
             <p>O'zingizga mos rejani tanlang</p>
         </div>
 
         <div class="cards-wrapper">
-            
             <div class="card">
                 <h3>Boshlang'ich</h3>
                 <div class="price">$19<span>/oyiga</span></div>
@@ -185,7 +202,8 @@
             </div>
 
             <div class="card popular">
-                <span class="badge">Tavsiya</span> <h3>Professional</h3>
+                <span class="badge">Tavsiya</span>
+                <h3>Professional</h3>
                 <div class="price">$49<span>/oyiga</span></div>
                 <ul class="features">
                     <li><i class="fas fa-check"></i> 5 ta Vebsayt</li>
@@ -195,7 +213,7 @@
                 <button class="btn">Tanlash</button>
             </div>
 
-             <div class="card">
+            <div class="card">
                 <h3>Biznes</h3>
                 <div class="price">$99<span>/oyiga</span></div>
                 <ul class="features">
@@ -205,9 +223,8 @@
                 </ul>
                 <button class="btn">Bog'lanish</button>
             </div>
-
         </div>
     </div>
-</body>
 
+</body>
 </html>

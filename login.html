@@ -4,210 +4,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Jamshid</title>
-    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
-        * { 
-            padding: 0; 
-            margin: 0; 
-            box-sizing: border-box; 
-            font-family: 'Poppins', sans-serif; 
-        }
-        
-        body { 
-            background: linear-gradient(to bottom right, #020617, #111827, #1e1b4b);
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            min-height: 100vh; 
-            overflow: hidden; 
-            position: relative;
-        }
-        
-        .background { 
-            width: 430px; 
-            height: 520px; 
-            position: absolute; 
-            transform: translate(-50%,-50%);
-            left: 50%; top: 50%;
-         }
-        .shape { 
-            height: 200px; 
-            width: 200px; 
-            position: absolute; 
-            border-radius: 50%; 
-            filter: blur(25px); 
-        }
-        
-        /* 1-Shar  */
-        .shape:first-child { 
-            background: linear-gradient(#a855f7, #14b8a6); 
-            left: -80px; top: -80px; opacity: 0.6; 
-        }
-        /* 2-Shar */
-        .shape:last-child { 
-            background: linear-gradient(to right, #0ea5e9, #6366f1); 
-            right: -30px; bottom: -80px; opacity: 0.6;
-         }
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
 
-        form { 
-            height: 520px; 
-            width: 400px; 
-            background-color: rgba(255,255,255,0.05); 
-            position: absolute; 
-            transform: translate(-50%,-50%); 
-            top: 50%; 
-            left: 50%; 
-            border-radius: 10px; 
-            backdrop-filter: blur(20px); 
-            border: 1px solid rgba(255,255,255,0.1); 
-            box-shadow: 0 0 40px rgba(8,7,16,0.6); 
-            padding: 50px 35px; 
-        }
-        form * { 
-            color: #ffffff; 
-            letter-spacing: 0.5px; 
-            outline: none; 
-            border: none; 
-        }
-        form h3 { 
-            font-size: 32px; 
-            font-weight: 500; 
-            line-height: 42px; 
-            text-align: center; 
-        }
-        label { 
-            display: block; 
-            margin-top: 30px; 
-            font-size: 16px; 
-            font-weight: 500; 
-        }
-        input { 
-            display: block; 
-            height: 50px; 
-            width: 100%; 
-            background-color: rgba(255,255,255,0.07); 
-            border-radius: 3px; 
-            padding: 0 10px; 
-            margin-top: 8px; 
-            font-size: 14px; 
-            font-weight: 300; 
-            transition: 0.3s; 
-            border: 1px solid transparent; 
-        }
-        
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        /* Input focus rangi */
-        input:focus { 
-            background-color: rgba(255,255,255,0.1); 
-            border-color: #14b8a6; 
-            box-shadow: 0 0 10px rgba(20, 184, 166, 0.2); 
-        }
-        ::placeholder { 
-            color: #e5e5e5;
-        }
-        
+body {
+    background: linear-gradient(to bottom right, #020617, #111827, #1e1b4b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
 
-        /* Tugma rangi */
-        button { 
-            margin-top: 50px; 
-            width: 100%; 
-            background: linear-gradient(to right, #14b8a6, #a855f7); 
-            color: #fff; 
-            padding: 15px 0; 
-            font-size: 18px; 
-            font-weight: 600; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            transition: 0.3s; 
-            box-shadow: 0 5px 15px rgba(20, 184, 166, 0.3); 
-        }
-        button:hover { 
-            transform: scale(1.03); 
-            box-shadow: 0 10px 20px rgba(168, 85, 247, 0.4); 
-        }
-        
-        .social { 
-            margin-top: 30px; 
-            display: flex; 
-            gap: 20px; 
-            justify-content: center;
-         }
-        .social div { 
-            width: 150px; 
-            border-radius: 3px; 
-            padding: 10px; 
-            background-color: rgba(255,255,255,0.27); 
-            color: #eaf0fb; 
-            text-align: center; 
-            cursor: pointer; 
-            transition: 0.3s; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 10px; 
-            font-size: 0.9rem; 
-        }
-        .social div:hover { 
-            background-color: rgba(255,255,255,0.47); 
-        }
-        
-        .back-link { 
-            position: absolute; 
-            top: 20px; 
-            left: 20px; 
-            color: #14b8a6; 
-            text-decoration: none; 
-            font-weight: bold; 
-            z-index: 100; 
-            font-size: 1.1rem; 
-            transition: 0.3s; 
-        }
-        .back-link:hover { 
-            color: #fff; 
-            text-decoration: underline; 
-        }
+.background {
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
 
-        /* RESPONSIVE */
-        @media screen and (max-width: 500px) {
-            .background { display: none; }
-            form { width: 90%; height: auto; padding: 30px 20px; }
-            form h3 { font-size: 24px; }
-            .social { flex-direction: column; gap: 10px; }
-            .social div { width: 100%; }
-        }
+.shape {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(25px);
+}
+
+.shape:first-child {
+    background: linear-gradient(#a855f7, #14b8a6);
+    left: -80px;
+    top: -80px;
+    opacity: 0.6;
+}
+
+.shape:last-child {
+    background: linear-gradient(to right, #0ea5e9, #6366f1);
+    right: -30px;
+    bottom: -80px;
+    opacity: 0.6;
+}
+
+form {
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+}
+
+form * {
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+form h3 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+input {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+input:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #14b8a6;
+}
+
+button {
+    margin-top: 50px;
+    width: 100%;
+    background: linear-gradient(to right, #14b8a6, #a855f7);
+    color: #fff;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.4);
+}
+
+.social {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.social div {
+    width: 150px;
+    border-radius: 3px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.27);
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.back-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #14b8a6;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 100;
+}
+
+.fade-in {
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
     </style>
 </head>
 <body>
-
     <a href="index.html" class="back-link">← Asosiy Sahifa</a>
-
-    <div class="background">
-        <div class="shape"></div> <div class="shape"></div> </div>
-
+    <div class="background"><div class="shape"></div> <div class="shape"></div> </div>
     <form>
         <h3>Kirish</h3>
-
         <label for="username">Foydalanuvchi nomi</label>
         <input type="text" placeholder="Ismingiz yoki Email" id="username">
-
         <label for="password">Parol</label>
         <input type="password" placeholder="Parolingiz" id="password">
-
         <button type="button">Tizimga kirish</button>
-        
         <div class="social">
-            <div class="google">
-                <i class="fab fa-google"></i> Google
-            </div>
-            <div class="fb">
-                <i class="fab fa-facebook"></i> Facebook
-            </div>
+            <div class="google"><i class="fab fa-google"></i> Google</div>
+            <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
         </div>
     </form>
-
 </body>
-
 </html>
