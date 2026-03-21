@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jamshid Turgunpolatov — IT Specialist & Frontend Developer. Building modern, responsive, and clean websites.">
   <title>Jamshid | Frontend Developer</title>
   <link rel="icon" type="image/png" href="Logo.png">
   <link rel="stylesheet" href="style.css">
@@ -14,13 +15,16 @@
   <nav class="navbar">
     <div class="container nav-container">
       <h2 class="logo">Turgunpolatov Jamshid<span>.</span></h2>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -68,19 +72,19 @@
     <div class="skills-wrapper">
       <div class="skill">
         <div class="skill-info"><span>HTML5</span><span>90%</span></div>
-        <div class="bar"><div class="fill html"></div></div>
+        <div class="bar"><div class="fill html" data-width="90"></div></div>
       </div>
       <div class="skill">
         <div class="skill-info"><span>CSS3 & Flexbox</span><span>85%</span></div>
-        <div class="bar"><div class="fill css"></div></div>
+        <div class="bar"><div class="fill css" data-width="85"></div></div>
       </div>
       <div class="skill">
         <div class="skill-info"><span>Responsive Design</span><span>80%</span></div>
-        <div class="bar"><div class="fill responsive"></div></div>
+        <div class="bar"><div class="fill responsive" data-width="80"></div></div>
       </div>
       <div class="skill">
         <div class="skill-info"><span>Git & GitHub</span><span>75%</span></div>
-        <div class="bar"><div class="fill git"></div></div>
+        <div class="bar"><div class="fill git" data-width="75"></div></div>
       </div>
     </div>
   </section>
@@ -91,7 +95,7 @@
       <div class="card project-card">
         <h3>Portfolio Website</h3>
         <p>My personal portfolio built with pure HTML & CSS with modern animations.</p>
-        <div class="links"><a href="#" class="github-btn">View Live</a></div>
+        <div class="links"><a href="https://jamshidt-s.github.io" target="_blank" class="github-btn">View Live</a></div>
       </div>
       <div class="card project-card">
         <h3>Pricing Table</h3>
@@ -107,9 +111,9 @@
   </section>
 
   <section class="contact" id="contact">
-    <h2 class="section-title">Bog'lanish</h2>
+    <h2 class="section-title">Contact</h2>
     <div class="card contact-card">
-      <p>Loyihalar bo'yicha hamkorlik qilishga tayyorman!</p>
+      <p>Ready to collaborate on projects!</p>
       <div class="contact-info">
           <a href="mailto:turgunpolatovjamshid45@gmail.com" class="contact-link">
             <i class="fas fa-envelope"></i> turgunpolatovjamshid45@gmail.com
@@ -130,6 +134,37 @@
   <footer>
     <p>© 2026 Jamshid | Frontend Developer</p>
   </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    const fills = document.querySelectorAll('.fill');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.style.width = el.dataset.width + '%';
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    fills.forEach(fill => observer.observe(fill));
+  </script>
 
 </body>
 </html>
