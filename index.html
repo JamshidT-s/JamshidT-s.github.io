@@ -1,170 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jamshid Turgunpolatov — IT Specialist & Frontend Developer. Building modern, responsive, and clean websites.">
-  <title>Jamshid | Frontend Developer</title>
-  <link rel="icon" type="image/png" href="Logo.png">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hosting Company Landing Page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="container nav-container">
-      <h2 class="logo">Turgunpolatov Jamshid<span>.</span></h2>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+    <!-- Header qismi -->
+    <header class="header">
+        <div class="container header__container">
+            <a href="#" class="header__logo">HostCloud</a>
+            <nav class="nav header__nav">
+               <!-- Menyuga id orqali ulanishlar berilgan -->
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#pricing" class="nav__link">Pricing</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <a href="#" class="btn btn--outline">Log In</a>
+            </div>
+        </div>
+    </header>
 
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1 class="fade-in">IT Specialist & <br> <span>Frontend Developer</span></h1>
-      <p class="fade-in delay-1">I build modern, responsive, and clean websites.</p>
-      <a href="#projects" class="btn fade-in delay-2">View My Work</a>
-    </div>
-  </section>
+    <main class="main-content">
+        <!-- Hero Section - QO'SHILDI: id="home" -->
+        <section class="hero hero--blue" id="home">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Premium Hosting Services</h1>
+                    <p class="hero__text">
+                        Donec sollicitudin molestie malesuada. Lorem ipsum dolor sit amet, 
+                        consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus 
+                        orci luctus et ultrices posuere cubilia Curae donec velit neque.
+                    </p>
+                    <a href="#pricing" class="btn btn--dark">GET WEB HOSTING</a> <!-- QO'SHIMCHA: Tugmaga link -->
+                </div>
+                <div class="hero__image-box">
+                    <img src="Без названия.png" alt="Hosting Illustration" class="hero__img">
+                </div>
+            </div>
 
-  <section class="about" id="about">
-    <h2 class="section-title">About Me</h2>
-    <div class="card about-card">
-      <p>
-        I am an IT specialist and frontend developer who enjoys creating
-        clean and responsive web interfaces. I love learning new technologies 
-        and building useful things.
-        <br><br>
-        I am also interested in mechanics, fixing and understanding
-        how systems work.
-      </p>
-    </div>
-  </section>
-  
-  <section class="education" id="education">
-    <h2 class="section-title">Education</h2>
-    <div class="grid-container">
-      <div class="card edu-item">
-        <h3>Amity University of Tashkent</h3>
-        <p class="highlight" style="color: var(--primary);">IFS Program (2024 – 2025)</p>
-        <p>Focus on foundational IT skills.</p>
-      </div>
-      <div class="card edu-item">
-        <h3>Namangan Institute</h3>
-        <p class="highlight" style="color: var(--primary);">Information Systems</p>
-        <p>Currently studying (Bachelor's Degree).</p>
-      </div>
-    </div>
-  </section>
+            <div class="hero__wave">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V120c45.56,2,93-2.32,133.22-12.33C181.54,96.53,230.84,73.23,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
 
-  <section class="skills" id="skills">
-    <h2 class="section-title">Technical Skills</h2>
-    <div class="skills-wrapper">
-      <div class="skill">
-        <div class="skill-info"><span>HTML5</span><span>90%</span></div>
-        <div class="bar"><div class="fill html" data-width="90"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-info"><span>CSS3 & Flexbox</span><span>85%</span></div>
-        <div class="bar"><div class="fill css" data-width="85"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-info"><span>Responsive Design</span><span>80%</span></div>
-        <div class="bar"><div class="fill responsive" data-width="80"></div></div>
-      </div>
-      <div class="skill">
-        <div class="skill-info"><span>Git & GitHub</span><span>75%</span></div>
-        <div class="bar"><div class="fill git" data-width="75"></div></div>
-      </div>
-    </div>
-  </section>
+        <!-- Domain Search Section -->
+        <section class="domain-search">
+            <div class="container domain-search__container">
+                <h2 class="domain-search__title">Find Your Perfect Domain Name</h2>
+                <form class="domain-form" action="#">
+                    <input type="text" class="domain-form__input" placeholder="Enter your domain name...">
+                    <button type="submit" class="btn btn--primary domain-form__button">Search</button>
+                </form>
+            </div>
+        </section>
 
-  <section class="projects" id="projects">
-    <h2 class="section-title">My Projects</h2>
-    <div class="grid-container">
-      <div class="card project-card">
-        <h3>Portfolio Website</h3>
-        <p>My personal portfolio built with pure HTML & CSS with modern animations.</p>
-        <div class="links"><a href="https://jamshidt-s.github.io" target="_blank" class="github-btn">View Live</a></div>
-      </div>
-      <div class="card project-card">
-        <h3>Pricing Table</h3>
-        <p>Modern pricing table with hover effects and responsive design.</p>
-        <div class="links"><a href="pricing.html" target="_blank">View Project</a></div>
-      </div>
-      <div class="card project-card">
-        <h3>Login Form</h3>
-        <p>Glassmorphism style login page.</p>
-        <div class="links"><a href="login.html" target="_blank">View Project</a></div>
-      </div>
-    </div>
-  </section>
+        <!-- Services Section - QO'SHILDI: id="services" -->
+        <section class="services" id="services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="services__grid">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">⏱️</div>
+                        <h3 class="feature-card__title">Uptime Guarantee</h3>
+                        <p class="feature-card__text">Your content goes here. Edit or remove this text inline.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">💾</div>
+                        <h3 class="feature-card__title">Secure Backups</h3>
+                        <p class="feature-card__text">Your content goes here. Edit or remove this text inline.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🔒</div>
+                        <h3 class="feature-card__title">Safe & Secure</h3>
+                        <p class="feature-card__text">Your content goes here. Edit or remove this text inline.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🎧</div>
+                        <h3 class="feature-card__title">Dedicated Support</h3>
+                        <p class="feature-card__text">Your content goes here. Edit or remove this text inline.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section class="contact" id="contact">
-    <h2 class="section-title">Contact</h2>
-    <div class="card contact-card">
-      <p>Ready to collaborate on projects!</p>
-      <div class="contact-info">
-          <a href="mailto:turgunpolatovjamshid45@gmail.com" class="contact-link">
-            <i class="fas fa-envelope"></i> turgunpolatovjamshid45@gmail.com
-          </a>
-          <a href="tel:+998939032703" class="contact-link">
-            <i class="fas fa-phone-alt"></i> +998 (93) 903 27 03
-          </a>
-      </div>
-      <div class="social-icons">
-        <a href="https://t.me/turgunpulatov_j" target="_blank" class="telegram"><i class="fab fa-telegram"></i></a>
-        <a href="https://linkedin.com/in/jamshid-turgunpulatov-169288381" target="_blank" class="linkedin"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/turgunpulatov_j/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://github.com/JamshidT-s" target="_blank" class="github"><i class="fab fa-github"></i></a>
-      </div>
-    </div>
-  </section>
+        <!-- Pricing Section - QO'SHILDI: id="pricing" -->
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <h2 class="section-title">Web Hosting Plans & Pricing</h2>
+                <div class="pricing__grid">
+                    <!-- Shared Hosting -->
+                    <div class="pricing-card">
+                        <h3 class="pricing-card__title">Shared Hosting</h3>
+                        <div class="pricing-card__price">$3.99<span>/month</span></div>
+                        <ul class="pricing-card__features">
+                            <li>25000 visits per month</li>
+                            <li>1 Site</li>
+                            <li>50GB Storage</li>
+                            <li>256 GB Bandwidth/mo</li>
+                        </ul>
+                        <a href="#" class="btn btn--outline pricing-card__btn">Get Started</a>
+                    </div>
+                    <!-- Pro Plan (Asosiy) -->
+                    <div class="pricing-card pricing-card--popular">
+                        <!-- YORLIQ  -->
+                        <div class="pricing-card__badge">Most Popular</div>
+                        <h3 class="pricing-card__title">Pro Plan</h3>
+                        <div class="pricing-card__price">$12.99<span>/month</span></div>
+                        <ul class="pricing-card__features">
+                            <li>25000 visits per month</li>
+                            <li>1 Site</li>
+                            <li>50GB Storage</li>
+                            <li>24/7 Support</li>
+                        </ul>
+                        <a href="#" class="btn btn--primary pricing-card__btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <footer>
-    <p>© 2026 Jamshid | Frontend Developer</p>
-  </footer>
-
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks  = document.getElementById('nav-links');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      navLinks.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        navLinks.classList.remove('open');
-      });
-    });
-
-    const fills = document.querySelectorAll('.fill');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          el.style.width = el.dataset.width + '%';
-          observer.unobserve(el);
-        }
-      });
-    }, { threshold: 0.4 });
-
-    fills.forEach(fill => observer.observe(fill));
-  </script>
+    <!-- Footer - QO'SHILDI: id="contact" -->
+    <footer class="footer" id="contact">
+        <div class="container footer__container">
+            <div class="footer__copy">
+                &copy; 2026 HostCloud. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
